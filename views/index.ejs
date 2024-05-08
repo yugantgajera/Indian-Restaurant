@@ -1,0 +1,168 @@
+<header class="primary-header container">
+  <a href="/"><img src="/img/logo.png" class="logo" alt="Indian Restaurant Logo" /></a>
+  <nav class="primary-navigation">
+    <ul role="list" class="nav-list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/">Contact us</a></li>
+      <li><a href="/menu">Menu</a></li>
+    </ul>
+  </nav>
+  <div class="icons">
+    <a href="/menu/search" class="icon-hover"><i class="fa-solid fa-magnifying-glass icon"></i></a>
+    <% if(user){ %>
+      <div class="profile">
+        <div id="profileBtn" class="icon-hover"
+          ><i class="fa-solid fa-user icon"></i
+        ></div>
+        <div class="profile__menu">
+          <ul role="list" class="menu__list">
+            <li><a href="#"><%= user.name %></a></li>
+            <li><a href="/orders">Orders</a></li>
+            <li><a href="/user/logout">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+      <a href="/cart" class="cart icon-hover"
+        ><i class="fa-solid fa-cart-shopping icon"></i>
+        <% if(cart) {%>
+          <span class="cart__count" id="cartCount"> <%= cart.items.length %> </span>
+        <% }else{ %>
+          <span class="cart__count" id="cartCount">0</span>
+          <% } %>
+      </a>
+    <% } else{%>
+    <a href="/user/login" class="login__btn">Login</a>
+    <% } %>
+  </div>
+</header>
+<main>
+  <section class="container">
+    <div class="even-columns hero-space">
+      <div class="content">
+        <h1 class="hero-title">Eat Well, Made Easy</h1>
+        <p class="hero__tagline">
+          From your favorite restaurants to your doorstep - easy and
+          hassle-free.
+        </p>
+        <a href="/menu" class="button hero-cta">Order Now</a>
+      </div>
+      <div class="image">
+        <img src="/img/Pudina 1.webp" class="pudina1" alt="Pudina" />
+        <img src="/img/Pudina 2.webp" class="pudina2" alt="Pudina" />
+        <img src="/img/Samosa.webp" class="hero-image" alt="Samosa" />
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container category-wrapper">
+      <div class="even-rows">
+        <div class="menu">
+          <h2 class="menu-title">Our Menu</h2>
+          <a href="/menu" class="button">See all</a>
+        </div>
+        <div class="category-grid items">
+          <a href="#" class="category-items">
+            <img src="/img/Pizza.webp" class="category-img" alt="Pizza" />
+            <h3>Pizza</h3> </a
+          ><a href="#" class="category-items">
+            <img src="/img/Burger.webp" class="category-img" alt="Burger" />
+            <h3>Burger</h3> </a
+          ><a href="#" class="category-items">
+            <img src="/img/Combo.webp" class="category-img combo" alt="Combo" />
+            <h3>Combo</h3> </a
+          ><a href="#" class="category-items">
+            <img src="/img/Fries.webp" class="category-img fries" alt="Fries" />
+            <h3>Fries</h3> </a
+          ><a href="#" class="category-items">
+            <img src="/img/Drinks.webp" class="category-img" alt="Drinks" />
+            <h3>Drinks</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container section-third">
+      <div class="order-cta2">
+        <div class="img-wrapper">
+          <img src="/img/Coriander 1.webp" class="coriander" alt="Coriander" />
+          <img class="secondary-image" src="/img/Momos.webp" alt="Momos" />
+        </div>
+
+        <div class="cta">
+          <h2 class="cta-title">
+            Order now and enjoy delicious food in no time.
+          </h2>
+          <p class="cta-tagline">
+            Get your favorite food delivered straight to your door.
+          </p>
+          <form action="/menu" class="city__form">
+            <input type="text" placeholder="Enter your City" />
+            <button type="submit" class="button square-button">
+              Find Food
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="contact-flex container">
+      <div class="write-us">
+        <div class="write-bg"></div>
+        <form action="#" class="form-wrapper">
+          <h3 class="write-title">Write to Us</h3>
+          <input type="text" placeholder="Enter your Name" />
+          <input type="email" placeholder="Enter your Email" />
+          <textarea
+            name="message"
+            id="message"
+            cols="20"
+            rows="2"
+            placeholder="Your Message"
+          ></textarea>
+
+
+        <button type="submit" class="button square-button2" >Submit</button>
+        </form>
+      </div>
+      <div class="contactus">
+        <img src="/img/Vegies.webp" class="vegies" alt="Vegies" />
+        <h3 class="contactus-title">Contact Us</h3>
+        <ul role="list" class="contact-details">
+          <li>
+            <!-- <img class="email__icon" src="/img/email.webp" alt="email icon" /> -->
+            <i class="fa-solid fa-envelope"></i>
+            <a
+              class="details"
+              href="mailto:Indian Restaurant"
+              target="_blank"
+              >Theindianreataurant@gmail.com</a
+            >
+          </li>
+          <li>
+            <!-- <img class="call__icon" src="/img/call.webp" alt="call icon" /> -->
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel: +1123-456-7890p123" class="details">2018840979</a>
+          </li>
+          <li>
+            <!-- <img class="location__icon" src="/img/location.webp" alt="location icon" /> -->
+            <!-- <i class="fa-solid fa-location-dot"></i> -->
+            <i class="fa-solid fa-globe"></i>
+            <a
+              class="details"
+              href="https://maps.app.goo.gl/77wiX3HRK5sTCm2cA"
+              target="_blank"
+              >New York, USA</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="primary__footer">
+</footer>
+
+<!-- Scrips -->
+<script src="/js/index.js"></script>
